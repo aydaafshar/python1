@@ -6,7 +6,7 @@ class Plant:
     def grow(self, cm=1):
         self.height += cm
 
-    def kind(self):
+    def kind(self) -> str:
         return "regular"
 
     def report_line(self):
@@ -22,7 +22,7 @@ class FloweringPlant(Plant):
     def bloom(self):
         self.blooming = True
 
-    def kind(self):
+    def kind(self) -> str:
         return "flowering"
 
     def report_line(self):
@@ -40,7 +40,7 @@ class PrizeFlower(FloweringPlant):
         super().__init__(name, height, color)
         self.prize_points = prize_points
 
-    def kind(self):
+    def kind(self) -> str:
         return "prize"
 
     def report_line(self):
@@ -150,5 +150,5 @@ if __name__ == "__main__":
     print(
         f"Garden scores - Alice: {alice.garden_score()},"
         f" Bob: {bob.garden_score()}"
-        )
+    )
     print("Total gardens managed:", GardenManager.create_garden_network())
